@@ -2,6 +2,8 @@
 import { useState, useEffect } from "react";
 import { Table, Spin } from "antd";
 import getAllUsers from "@/lib/getAllUsers";
+import { Button } from "antd";
+import Link from "next/link";
 
 const Page = () => {
   const [users, setUsers] = useState([]);
@@ -51,9 +53,14 @@ const Page = () => {
   ];
 
   return (
-    <div className="container mx-auto h-screen p-7">
-      <div className="d-flex justify-between items-center">
-        <h1 className="text-2xl font-bold mb-5">User List</h1>
+    <div className="container mx-auto min-h-screen p-7">
+      <div className="flex justify-between items-center mb-5">
+        <h1 className="text-2xl font-bold mb-0">User List</h1>
+        <Link href="/signup">
+          <Button type="primary" size="middle">
+            Sign up
+          </Button>
+        </Link>
       </div>
       {loading ? (
         <div
